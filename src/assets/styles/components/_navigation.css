@@ -1,0 +1,109 @@
+/* _navigation.css */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-navigation);
+    padding: var(--spacing-md) 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-medium);
+  }
+  
+  .nav-container.scrolled {
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-logo {
+    font-family: var(--font-code);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-short);
+  }
+  
+  .nav-logo:hover {
+    opacity: 0.8;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+  }
+  
+  .nav-link {
+    position: relative;
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    transition: all var(--transition-short);
+  }
+  
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+  
+  .nav-link::before {
+    content: '>';
+    color: var(--color-primary);
+    opacity: 0;
+    margin-right: 5px;
+    transition: all var(--transition-short);
+  }
+  
+  .nav-link:hover::before {
+    opacity: 1;
+  }
+  
+  .nav-link.router-link-active {
+    color: var(--color-primary);
+  }
+  
+  .nav-link.router-link-active::before {
+    opacity: 1;
+  }
+  
+  /* Menú móvil */
+  .nav-mobile-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-mobile-button {
+      display: block;
+    }
+  
+    .nav-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--color-background);
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all var(--transition-medium);
+    }
+  
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

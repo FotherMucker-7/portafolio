@@ -1,0 +1,65 @@
+/* _typography.css */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  p {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .code-text {
+    font-family: var(--font-code);
+  }
+  
+  /* Utilidades comunes */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  /* Animaciones base */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn var(--transition-medium);
+  }
+  
+  .slide-up {
+    animation: slideUp var(--transition-medium);
+  }
